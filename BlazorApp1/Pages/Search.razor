@@ -1,0 +1,13 @@
+﻿@page "/search"
+
+<h3>Search</h3>
+
+<input @bind="SearchTerm" @bind:event="oninput" placeholder="Søg på navn"/>
+
+<ul class="list-group">
+    
+@foreach(var person in FilteredPeople)
+{
+    <li class="list-group-item">@person.Name</li>
+}
+</ul>

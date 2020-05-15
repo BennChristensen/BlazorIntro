@@ -1,0 +1,15 @@
+﻿<h3>ToogleInputType</h3>
+
+<input @bind-type="InputType" @bind-type:event="onchange"/>
+
+<input type="button" class="btn btn-primary" @onclick="ChangeInputType" value="Skift input type" />
+
+@code {
+
+    public string InputType { get; set; } = "text";
+
+    public void ChangeInputType()
+    {
+        InputType = InputType == "text" ? "radio" : "text";
+    }
+}

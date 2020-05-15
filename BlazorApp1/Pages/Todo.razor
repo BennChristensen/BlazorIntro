@@ -1,0 +1,19 @@
+﻿@page "/todo"
+<h3>Todo</h3>
+
+@foreach (var todo in Todos.Where(t => !t.IsCompleted).ToList())
+{
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <div class="input-group-text">
+                <input type="checkbox" @bind="todo.IsCompleted" />
+            </div>
+        </div>
+        <label class="form-control">@todo.Title</label>
+    </div>
+}
+
+<div class="">
+    <input placeholder="Something todo" @bind="NewTodo" class="form-control" />
+    <button @onclick="AddTodo" class="btn btn-primary">Add Todo</button>
+</div>
